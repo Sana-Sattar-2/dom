@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Clock + Happy Birthday</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f8ff;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    #clock {
+      font-size: 3rem;
+      margin-top: 20px;
+      color: #0d6efd;
+    }
+
+    #birthdayMessage {
+      font-size: 2rem;
+      color: #dc3545;
+      margin-top: 20px;
+      display: none;
+    }
+
+    #startBtn {
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      background-color: #0d6efd;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #startBtn:hover {
+      background-color: #0b5ed7;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="startBtn">Start Clock</button>
+
+  <div id="clock"></div>
+  <div id="birthdayMessage">🎉 Happy Birthday!  Dear batool🎂</div>
+
+  <script>
+    let clockStarted = false;
+
+    document.getElementById("startBtn").addEventListener("click", () => {
+      if (!clockStarted) {
+        clockStarted = true;
+
+        // Show birthday message
+        document.getElementById("birthdayMessage").style.display = "block";
+
+        // Start clock
+        setInterval(() => {
+          const now = new Date();
+          const hours = String(now.getHours());
+          const minutes = String(now.getMinutes());
+          const seconds = String(now.getSeconds());
+          const updatedTimeString = `${hours}:${minutes}:${seconds}`;
+          document.getElementById("clock").innerText = updatedTimeString;                                                   
+        }, 1000);
+      }
+    });
+  </script>
+
+</body>
+</html>

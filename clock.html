@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Clock with Birthday Checker</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: sans-serif;
+      padding-top: 50px;
+    }
+
+    #clockdiv {
+      font-size: 4rem;
+      margin-bottom: 30px;
+    }
+
+    #birthdayMessage {
+      color: green;
+      font-size: 1.5rem;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="clockdiv">12:00:00 AM</div>
+
+  <label for="dob">Enter your Date of Birth:</label><br />
+  <input type="date" id="dob" /><br />
+  <button onclick="checkBirthday()">Check Birthday</button>
+
+  <div id="birthdayMessage"></div>
+
+  <script>
+    // Function to format time in 12-hour format with AM/PM
+    function formatTime12Hour(date) {
+      let hours = date.getHours();
+      const minutes = date.getMinutes();
+      const seconds = date.getSeconds();
+      const ampm = hours >= 12 ? "PM" : "AM";
+      hours = hours % 12;
+      hours = hours ? hours : 12; // 0 should be 12
+      const strTime =
+        `${String(hours).padStart(2, '0')}: 
+        ${String(minutes).padStart(2, '0')}: 
+        ${String(seconds).padStart(2, '0')} ${ampm}`;
+      return strTime;
+    }
+
+    // Digital Clock
+    setInterval(() => {
+      const now = new Date();
+      document.getElementById("clockdiv").innerText = formatTime12Hour(now);
+    }, 1000);
+
+    // Check Birthday
+    function checkBirthday() {
+      const dobInput = document.getElementById("dob").value;
+      console.log(dobInput)
+      if (!dobInput) {
+        alert("Please select your date of birth!");
+        return;
+      }
+
+      const today = new Date();
+      const dob = new Date(dobInput);
+
+      const isBirthday =
+        today.getDate() === dob.getDate() &&
+        today.getMonth() === dob.getMonth();
+
+      const messageDiv = document.getElementById("birthdayMessage");
+      if (isBirthday) {
+        messageDiv.innerText = "🎉 Happy Birthday! 🎂";
+      } else {
+        messageDiv.innerText = "Today is not your birthday.";
+      }
+    }
+  </script>
+</body>
+
+</html>

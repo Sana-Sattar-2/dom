@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="./table/dataTables.dataTables.css">
+  <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
+    <style>
+      #myChart{
+        max-width: 600px;
+        margin: 50px auto;
+      }
+    </style>
+  </head>
+  <body>
+
+
+<div class="container">
+    
+   <table id="myTable" class="display table">
+    <thead>
+        <tr>
+            <th>name </th>
+            <th>class</th>
+            <th>roll no</th>
+            <th>contact</th>
+            <th>city</th>
+        </tr>
+    </thead>
+   <tbody>
+    <!-- 50 Students Data -->
+    <tr><td>Ali Khan</td><td>10</td><td>1</td><td>03001234567</td><td>Lahore</td></tr>
+    <tr><td>Sana Sattar</td><td>9</td><td>2</td><td>03011234567</td><td>Lodhran</td></tr>
+    <tr><td> Maryum Baloach</td><td>Kg1</td><td>3</td><td>03021234567</td><td>Lodhran</td></tr>
+    <tr><td>Sumaira zulfiqar</td><td>1</td><td>4</td><td>03031234567</td><td>Multan</td></tr>
+    <tr><td>Usman Javed</td><td>7</td><td>5</td><td>03041234567</td><td>Peshawar</td></tr>
+    <tr><td>Ayesha Shah</td><td>9</td><td>6</td><td>03051234567</td><td>Quetta</td></tr>
+    <tr><td>Hassan Ali</td><td>8</td><td>7</td><td>03061234567</td><td>Faisalabad</td></tr>
+    <tr><td> Noreen Tanveer</td><td>10</td><td>8</td><td>03071234567</td><td>Rawalpindi</td></tr>
+    <tr><td>Bilal Khan</td><td>6</td><td>9</td><td>03081234567</td><td>Sialkot</td></tr>
+    <tr><td>Zainab Rizvi</td><td>9</td><td>10</td><td>03091234567</td><td>Hyderabad</td></tr>
+    <tr><td>Imran Saleem</td><td>7</td><td>11</td><td>03101234567</td><td>Bahawalpur</td></tr>
+    <tr><td>Maha Tariq</td><td>10</td><td>12</td><td>03111234567</td><td>Sargodha</td></tr>
+    <tr><td>Fahad Mirza</td><td>8</td><td>13</td><td>03121234567</td><td>Gujranwala</td></tr>
+    <tr><td>Hina Aslam</td><td>9</td><td>14</td><td>03131234567</td><td>Larkana</td></tr>
+    <tr><td>Tariq Mehmood</td><td>7</td><td>15</td><td>03141234567</td><td>Okara</td></tr>
+    <tr><td>Samina Yousaf</td><td>8</td><td>16</td><td>03151234567</td><td>Kasur</td></tr>
+    <tr><td>Jawad Zafar</td><td>10</td><td>17</td><td>03161234567</td><td>Sheikhupura</td></tr>
+    <tr><td>Nida Iqbal</td><td>6</td><td>18</td><td>03171234567</td><td>Rahim Yar Khan</td></tr>
+    <tr><td>Kashif Rana</td><td>9</td><td>19</td><td>03181234567</td><td>Jhelum</td></tr>
+    <tr><td>Mehwish Anwar</td><td>8</td><td>20</td><td>03191234567</td><td>Abbottabad</td></tr>
+    <tr><td>Rizwan Ali</td><td>7</td><td>21</td><td>03201234567</td><td>Gujrat</td></tr>
+    <tr><td>Sara Munir</td><td>10</td><td>22</td><td>03211234567</td><td>Kohat</td></tr>
+    <tr><td>Faizan Shah</td><td>9</td><td>23</td><td>03221234567</td><td>Sukkur</td></tr>
+    <tr><td>Nashit Kamal</td><td>8</td><td>24</td><td>03231234567</td><td>Mirpur</td></tr>
+    <tr><td>Iqra Naveed</td><td>6</td><td>25</td><td>03241234567</td><td>Chiniot</td></tr>
+    <tr><td>Saad Ahmed</td><td>7</td><td>26</td><td>03251234567</td><td>Mandi Bahauddin</td></tr>
+    <tr><td>Shiza Fatima</td><td>9</td><td>27</td><td>03261234567</td><td>Nawabshah</td></tr>
+    <tr><td>Umer Farooq</td><td>10</td><td>28</td><td>03271234567</td><td>Bannu</td></tr>
+    <tr><td>Arifa Noor</td><td>8</td><td>29</td><td>03281234567</td><td>Dera Ghazi Khan</td></tr>
+    <tr><td>Adil Qureshi</td><td>7</td><td>30</td><td>03291234567</td><td>Jhang</td></tr>
+    <tr><td>Lubna Ijaz</td><td>6</td><td>31</td><td>03301234567</td><td>Tando Adam</td></tr>
+    <tr><td>Waqas Nadeem</td><td>9</td><td>32</td><td>03311234567</td><td>Dadu</td></tr>
+    <tr><td>Maria Sadiq</td><td>8</td><td>33</td><td>03321234567</td><td>Thatta</td></tr>
+    <tr><td>Hammad Akram</td><td>10</td><td>34</td><td>03331234567</td><td>Nowshera</td></tr>
+    <tr><td>Beenish Tariq</td><td>9</td><td>35</td><td>03341234567</td><td>Mardan</td></tr>
+    <tr><td>Kamran Gill</td><td>8</td><td>36</td><td>03351234567</td><td>Swat</td></tr>
+    <tr><td>Neha Hassan</td><td>7</td><td>37</td><td>03361234567</td><td>Skardu</td></tr>
+    <tr><td>Adeel Shabbir</td><td>6</td><td>38</td><td>03371234567</td><td>Gilgit</td></tr>
+    <tr><td>Sumbal Zia</td><td>10</td><td>39</td><td>03381234567</td><td>Muzaffarabad</td></tr>
+    <tr><td>Shayan Butt</td><td>9</td><td>40</td><td>03391234567</td><td>Attock</td></tr>
+    <tr><td>Asma Jameel</td><td>8</td><td>41</td><td>03401234567</td><td>Khuzdar</td></tr>
+    <tr><td>Arsalan Rafiq</td><td>7</td><td>42</td><td>03411234567</td><td>Zhob</td></tr>
+    <tr><td>Alina Shahid</td><td>6</td><td>43</td><td>03421234567</td><td>Gwadar</td></tr>
+    <tr><td>Waqar Nasir</td><td>10</td><td>44</td><td>03431234567</td><td>Jacobabad</td></tr>
+    <tr><td>Laiba Noman</td><td>9</td><td>45</td><td>03441234567</td><td>Shikarpur</td></tr>
+    <tr><td>Zohaib Asif</td><td>8</td><td>46</td><td>03451234567</td><td>Khairpur</td></tr>
+    <tr><td>Fizza Rehman</td><td>7</td><td>47</td><td>03461234567</td><td>Mingora</td></tr>
+    <tr><td>Rehan Tariq</td><td>6</td><td>48</td><td>03471234567</td><td>Kharian</td></tr>
+    <tr><td>Mariam Zafar</td><td>10</td><td>49</td><td>03481234567</td><td>Turbat</td></tr>
+    <tr><td>Zeeshan Abbas</td><td>9</td><td>50</td><td>03491234567</td><td>Vehari</td></tr>
+  </tbody>
+     
+
+
+</div>
+
+<div class="container">
+  <h2>Sale chart</h2>
+  <canvas id="myChart"></canvas>
+</div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'polarArea', // Change to 'line', 'pie', 'doughnut', etc.
+            data:  {
+  labels: [
+    'Red',
+    'Green',
+    'Yellow',
+    'Grey',
+    'Blue'
+  ],
+  datasets: [{
+    label: 'My First Dataset',
+    data: [11, 16, 7, 3, 14],
+    backgroundColor: [
+      'rgb(255, 99, 132)',
+      'rgb(75, 192, 192)',
+      'rgb(255, 205, 86)',
+      'rgb(201, 203, 207)',
+      'rgb(54, 162, 235)'
+    ]
+  }]
+},
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  <script src="./table/jquery/jquery-3.7.1.min.js"></script>
+  <script src="./table/dataTables.js"></script>
+
+
+      <!-- <script src="./chart.min.js"></script> -->
+<!-- DataTables Buttons extension -->
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js"></script>
+
+    <!-- JSZip for Excel export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+    <!-- pdfmake for PDF export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            });
+        });
+    </script>
+  
+  </body>
+</html>

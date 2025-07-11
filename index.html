@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 100px;
+      flex-direction: column;
+    }
+
+    #clock {
+      font-size: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      height: 200px;
+      width: 200px;
+      background: linear-gradient(90deg, rgb(186, 186, 247), rgb(164, 221, 164), rgb(199, 166, 166));
+
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- set interval built in function  and 1000 milisecond jo ha 1second kay braber hota ha  -->
+
+  <div id="clock"> 12:00:00</div>
+  <label for="dob">Enter date f date of birth</label> <br>
+  <input type="date" id="dob" /> <br>
+  <button onclick="checkBirthday() "> check birthday</button>
+  <div id="birthdayMessage"> Hey sana </div>
+
+
+
+  <script>
+    function checkBirthday() {
+      console.log(" click button");
+      const dateinput = document.getElementById("dob").value;
+      //     console.log(" click button"); 
+      console.log(dateinput);
+      const today = new Date();
+
+      console.log(today);
+      const dob = new Date(dateinput);
+      console.log(dob);
+
+      const isBirthday = today.getDate() === dob.getDate() && today.getMonth() === dob.getMonth();
+      const messageDiv = document.getElementById("birthdayMessage");
+      if (isBirthday) {
+        messageDiv.innerText = "Happy Birth Day Batool"
+      } else {
+        messageDiv.innerText = " today is not your "
+
+      }
+
+      if (!dateinput) {
+        alert(" please select the date ");
+        return;
+      }
+
+      setInterval(() => {
+        const now = new Date();
+
+
+        const updatedTimeString = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
+        console.log(updatedTimeString);
+
+        document.getElementById("clock").innerText = updatedTimeString;
+
+
+      }, 1000);
+
+    }
+
+  </script>
+
+    <select id="imagechange" onchange=" uploadimage()">
+    <option >pakistan</option>
+    <option >india</option>
+    <option >Turky</option>
+    <option >china</option>
+
+  </select>
+  <img src="flag/IMG-20250618-WA0007.jpg" alt="" id="flags">
+  photo: <input type="file" id="imgfile" onchange="loadFile()">
+  <img src="flag/IMG-20250618-WA0007.jpg" alt="" id="myfile">
+
+<img src="./flag/turky.jpg" alt="">
+  <!-- flaag part is start from here -->
+  <script>
+
+    function uploadimage() {
+      // alert("funtion chal raha hy ")
+      let counteries = {
+        pakistan: "flag/IMG-20250618-WA0002.jpg",
+        india: "flag/IMG-20250618-WA0003.jpg",
+
+        saudia: "flag/IMG-20250618-WA0005.jpg",
+        Turky: "./flag/turky.jpg",
+
+      };
+      let c = document.getElementById("imagechange").value;
+      console.log("c value",c);
+
+       for (var i in counteries) {
+        console.log(i);
+
+        if (c == i) {
+          document.getElementById("flags").src = counteries[i];
+
+        }
+      }
+      console.log(counteries[i]);
+
+
+
+    }
+
+    function loadFile() {
+      var image = document.getElementById("myfile");
+      image.src = URL.createObjectURL(event.target.files[0])
+    };
+
+  </script>
+
+
+</body>
+
+</html>
